@@ -165,15 +165,15 @@ public class Profile extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == CHOOSE_IMAGE && resultCode == RESULT_OK && data != null && data.getData() != null) {
-                    uriProfileImage = data.getData();
-                    try {
-                        Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uriProfileImage);
-                        imageView.setImageBitmap(bitmap);
+            uriProfileImage = data.getData();
+            try {
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uriProfileImage);
+                imageView.setImageBitmap(bitmap);
 
-                        uploadImageToFirebaseStorage();
+                uploadImageToFirebaseStorage();
 
-                    } catch (IOException e) {
-                        e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
     }

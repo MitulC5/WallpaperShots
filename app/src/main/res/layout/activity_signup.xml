@@ -43,6 +43,7 @@
                 android:paddingBottom="15dp"
                 android:textColorHint="#0000ff" />
 
+
             <Button
                 android:id="@+id/buttonSignUp"
                 android:layout_width="match_parent"

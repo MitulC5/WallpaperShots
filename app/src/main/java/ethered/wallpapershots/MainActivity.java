@@ -21,7 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import java.io.ByteArrayOutputStream;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity  extends AppCompatActivity {
     GridView myGridView,myGridView1;
     Button bt2,bt3;
 
