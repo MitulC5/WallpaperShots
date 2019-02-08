@@ -1,65 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ethered.wallpapershots.MainActivity"
+    android:orientation="vertical"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
+    android:scrollbars="vertical"
+    android:weightSum="1"
+    >
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context="ethered.wallpapershots.MainActivity">
-    <LinearLayout
+
+    <ImageView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="16dp"
+        app:srcCompat="@drawable/wallpaper" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="4dp"
+        android:text="@string/app_name"
+        android:textAllCaps="true"
+        android:textSize="16sp"
+        android:fontFamily="@font/modern_antiqua"
+        tools:textColor="#676767" />
+
+    <Button
+        android:id="@+id/bt3"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:clipChildren="false"
-        android:clipToPadding="false"
-        android:orientation="vertical"
-        android:padding="24dp"
-        android:paddingTop="16dp">
+        android:layout_marginTop="80dp"
+        android:layout_weight="0.2"
+        android:drawableRight="@drawable/ic_menu_gallery"
+        android:elevation="@dimen/fab_min_significant_scroll"
+        android:fadingEdge="horizontal|vertical"
+        android:fontFamily="@font/bowlby_one"
+        android:text="View Latest Images"
+        android:textFontWeight="20sp"
 
-        <ImageView
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="28dp"
-            android:layout_marginBottom="16dp"
-            app:srcCompat="@drawable/wallpaper" />
+        app:backgroundTint="#676767"
+        app:cornerRadius="16dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="4dp"
-            android:text="@string/app_name"
-            android:textAllCaps="true"
-            android:textSize="16sp"
-            tools:fontFamily="@font/modern_antiqua"
-            tools:textColor="@color/textColorPrimary" />
+    <Button
 
+        android:id="@+id/bt2"
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/bt3"
-            style="@style/Widget.MaterialComponents.Button.Icon"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:layout_weight="0.2"
-            android:drawableRight="@drawable/ic_menu_gallery"
-            android:elevation="@dimen/fab_min_significant_scroll"
-            android:text="View Latest Images"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Login"
 
+        android:textFontWeight="20sp"
+        android:elevation="@dimen/fab_min_significant_scroll"
+        android:fontFamily="@font/bowlby_one"
 
-            tools:fontFamily="@font/cherry_swash_bold"
-            tools:textSize="20sp" />
+         />
 
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/bt2"
-            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:text="Login"
-            tools:fontFamily="@font/cherry_swash_bold"
-            tools:textSize="20sp" />
-
-    </LinearLayout>
-</ScrollView>
+</LinearLayout>
