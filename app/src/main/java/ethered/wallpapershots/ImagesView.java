@@ -79,11 +79,11 @@ public class ImagesView extends AppCompatActivity {
 
                 @Override
                 public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                    Log.d(TAG,"Errorhdiahiawhawhkacwjwaijacwoi;awjocwb21!");
+                    Log.d(TAG,"Error");
 
                     for(QueryDocumentSnapshot documentSnapshot :queryDocumentSnapshots) {
                         String URLs = (String) documentSnapshot.get("image_url");
-                        Log.d(TAG, "URLs of the Image(hahahahahha) :" + URLs);
+                        Log.d(TAG, "URLs of the Image :" + URLs);
                         ImageModel imageModel = documentSnapshot.toObject(ImageModel.class);
                         ImageModelList.add(imageModel);
 
@@ -114,11 +114,11 @@ public class ImagesView extends AppCompatActivity {
 
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                Log.d(TAG,"Errorhdiahiawhawhkacwjwaijacwoi;awjocwb2!");
+                Log.d(TAG,"Error getting image data!");
 
                 for(QueryDocumentSnapshot documentSnapshot :queryDocumentSnapshots) {
                     String URLs = (String) documentSnapshot.get("image_url");
-                    Log.d(TAG, "URLs of the Image (lalalalalalla):" + URLs);
+                    Log.d(TAG, "URLs of the Image :" + URLs);
                     ImageModel imageModel = documentSnapshot.toObject(ImageModel.class);
                     ImageModelList.add(imageModel);
 

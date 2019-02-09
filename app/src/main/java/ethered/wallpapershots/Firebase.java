@@ -150,12 +150,12 @@ public class Firebase extends AppCompatActivity implements View.OnClickListener 
                                     db.collection("imagedata").add(datatosave).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                         @Override
                                         public void onSuccess(DocumentReference documentReference) {
-                                            Log.d("ERror","Document uploaded");
+                                            Log.d("Error","Document uploaded");
                                         }
                                     }).addOnFailureListener(new OnFailureListener() {
                                         @Override
                                         public void onFailure(@NonNull Exception e) {
-                                            Log.d("ERror","Document failed to upload");
+                                            Log.d("Error","Document failed to upload");
                                         }
                                     });
                                     progressDialog.dismiss();
