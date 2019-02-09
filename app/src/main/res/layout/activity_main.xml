@@ -35,15 +35,15 @@
         android:id="@+id/bt3"
 
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="80dp"
         android:layout_weight="0.2"
-        android:drawableRight="@drawable/ic_menu_gallery"
+        android:drawableEnd="@drawable/ic_menu_gallery"
         android:elevation="@dimen/fab_min_significant_scroll"
         android:fadingEdge="horizontal|vertical"
         android:fontFamily="@font/bowlby_one"
         android:text="View Latest Images"
-        android:textFontWeight="20sp"
+
 
         app:backgroundTint="#676767"
         app:cornerRadius="16dp" />
@@ -57,7 +57,7 @@
         android:layout_marginTop="40dp"
         android:text="Login"
 
-        android:textFontWeight="20sp"
+
         android:elevation="@dimen/fab_min_significant_scroll"
         android:fontFamily="@font/bowlby_one"
 

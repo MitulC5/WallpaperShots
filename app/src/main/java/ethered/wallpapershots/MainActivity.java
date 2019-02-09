@@ -30,6 +30,7 @@ public class MainActivity  extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -45,7 +46,7 @@ public class MainActivity  extends AppCompatActivity {
         bt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),ImagesView.class);
+                Intent i = new Intent(getApplicationContext(),Signin.class);
                 startActivity(i);
             }
         });
