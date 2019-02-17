@@ -6,9 +6,9 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import java.io.ByteArrayOutputStream;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity  extends AppCompatActivity {
     GridView myGridView,myGridView1;
     Button bt2,bt3;
 
@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         bt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),ImagesView.class);
+                Intent i = new Intent(getApplicationContext(),Signin.class);
                 startActivity(i);
             }
         });
