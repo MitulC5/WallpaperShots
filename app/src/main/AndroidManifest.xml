@@ -38,10 +38,6 @@
         <activity android:name=".Firebase" />
         <activity android:name=".ImagesView" />
 
-        <activity
-            android:name=".navigationdrawer"
-            android:label="@string/title_activity_navigationdrawer"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".cropactivity" />
 
         <activity android:name=".ImageCropSave"></activity>
