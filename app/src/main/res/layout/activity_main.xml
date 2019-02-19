@@ -12,19 +12,55 @@
     >
 
 
-    <Button
-        android:layout_marginTop="180dp"
-        android:id="@+id/bt3"
-        android:layout_width="match_parent"
+    <ImageView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="16dp"
+        app:srcCompat="@drawable/wallpaper" />
+
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="0.2"
-        android:text="View Latest Images" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="4dp"
+        android:text="@string/app_name"
+        android:textAllCaps="true"
+        android:textSize="16sp"
+        android:fontFamily="@font/modern_antiqua"
+        tools:textColor="#676767" />
 
     <Button
+        android:id="@+id/bt3"
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="80dp"
+        android:layout_weight="0.2"
+        android:drawableEnd="@drawable/ic_menu_gallery"
+        android:elevation="@dimen/fab_min_significant_scroll"
+        android:fadingEdge="horizontal|vertical"
+        android:fontFamily="@font/bowlby_one"
+        android:text="View Latest Images"
+
+
+        app:backgroundTint="#676767"
+        app:cornerRadius="16dp" />
+
+    <Button
+
         android:id="@+id/bt2"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.2"
-        android:text="Login" />
+        android:layout_marginTop="40dp"
+        android:text="Login"
+
+
+        android:elevation="@dimen/fab_min_significant_scroll"
+        android:fontFamily="@font/bowlby_one"
+
+         />
 
 </LinearLayout>
