@@ -67,7 +67,11 @@ public class ImagesView extends AppCompatActivity {
         rv.setHasFixedSize(true);
         GridLayoutManager mGrid = new GridLayoutManager(this,2);
         StaggeredGridLayoutManager mLayoutManager  = new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
-        rv.setLayoutManager(mGrid);
+        rv.setLayoutManager(mLayoutManager);
+
+        //RecyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+        //ImageModelRecyclerAdapter adapter = new ImageModelRecyclerAdapter(this);
+        //RecyclerView.setAdapter(adapter);
 
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override

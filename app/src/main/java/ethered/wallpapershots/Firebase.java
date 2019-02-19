@@ -122,7 +122,7 @@ public class Firebase extends AppCompatActivity implements View.OnClickListener 
                             double progress = (100.0 * taskSnapshot.getBytesTransferred()) / taskSnapshot.getTotalByteCount();
 
                             //displaying percentage in progress dialog
-                            progressDialog.setMessage("Uploaded " + ((int) progress) + "%...");
+                           // progressDialog.setMessage("Uploaded " + ((int) progress) + "%...");
                         }
                     });
 
@@ -134,9 +134,9 @@ public class Firebase extends AppCompatActivity implements View.OnClickListener 
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    final ProgressDialog progressDialog = new ProgressDialog(getApplicationContext());
-                    progressDialog.setTitle("Uploading");
-                    progressDialog.show();
+                   // final ProgressDialog progressDialog = new ProgressDialog(getApplicationContext());
+                    //progressDialog.setTitle("Uploading");
+                    //progressDialog.hide();
                     EditText e = (EditText)findViewById(R.id.imgname);
                     StorageReference ref=mStorageRef.child("images/"+ e.getText().toString());
                     ref.getDownloadUrl()
