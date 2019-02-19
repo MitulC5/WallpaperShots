@@ -55,7 +55,53 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/linearLayout" />
+        android:layout_height="424dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:text="Image Title:"
+            android:gravity="center"
+            android:textSize="15dp"
+            android:layout_weight="0.33"
+            />
+        <EditText
+            android:id="@+id/imgtitle"
+            android:layout_marginRight="5dp"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="0.67"
+
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:text="Image Description:"
+            android:gravity="center"
+            android:textSize="15dp"
+            android:layout_weight="0.33"
+            />
+        <EditText
+            android:id="@+id/imgdesc"
+            android:layout_marginRight="5dp"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="0.67"
+
+            />
+    </LinearLayout>
+
+
 
 </LinearLayout>

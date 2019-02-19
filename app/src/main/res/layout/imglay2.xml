@@ -23,7 +23,7 @@
             android:scaleType="fitXY" />
 
         <TextView
-            android:id="@+id/photographername1"
+            android:id="@+id/imagetitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"

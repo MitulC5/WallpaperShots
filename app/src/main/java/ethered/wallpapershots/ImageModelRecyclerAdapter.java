@@ -31,18 +31,19 @@ public  class ImageModelRecyclerAdapter extends RecyclerView.Adapter<ImageModelR
 
         public ImageView imageView;
         private TextView photographersname;
+        private TextView imageDesc;
+        private TextView imageTitle;
 
         private ViewHolder(View itemView) {
             super(itemView);
 
             imageView = (ImageView) itemView.findViewById(R.id.itemimage1);
-            photographersname = (TextView)itemView.findViewById(R.id.photographername1);
+            imageTitle = (TextView)itemView.findViewById(R.id.imagetitle);
+
 
             }
 
     }
-
-
 
     public List<String> ImageModelList1;
     public List<ImageModel> imageModelList;
@@ -65,16 +66,16 @@ public  class ImageModelRecyclerAdapter extends RecyclerView.Adapter<ImageModelR
     @Override
     public void onBindViewHolder(@NonNull ImageModelRecyclerAdapter.ViewHolder holder, int position) {
         final ImageModel currentimage = imageModelList.get(position);
-        Log.d("Firestore1",currentimage.getimage_url());
-        Log.d("Firestore1",currentimage.getuser_id());
-        holder.photographersname.setText(currentimage.getuser_id());
+        Log.d("Firestore1",currentimage.getImage_url());
+        Log.d("Firestore1",currentimage.getUser_id());
+        holder.imageTitle.setText(currentimage.getUser_id());
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 Intent i = new Intent(context,Fullimage2.class);
 
-                i.putExtra("url",currentimage.getimage_url());
+                i.putExtra("url",currentimage.getImage_url());
                 context.startActivity(i);
 
             }
@@ -83,7 +84,7 @@ public  class ImageModelRecyclerAdapter extends RecyclerView.Adapter<ImageModelR
 
 
         GlideApp.with(context)
-                .load(currentimage.getimage_url())
+                .load(currentimage.getImage_url())
                 .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
                 .into(holder.imageView);
 
