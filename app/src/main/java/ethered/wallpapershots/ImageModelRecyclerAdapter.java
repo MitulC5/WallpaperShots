@@ -76,6 +76,8 @@ public  class ImageModelRecyclerAdapter extends RecyclerView.Adapter<ImageModelR
                 Intent i = new Intent(context,Fullimage2.class);
 
                 i.putExtra("url",currentimage.getImage_url());
+                i.putExtra("title",currentimage.getImage_title());
+                i.putExtra("desc",currentimage.getImage_desc());
                 context.startActivity(i);
 
             }

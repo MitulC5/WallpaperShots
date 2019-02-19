@@ -38,9 +38,9 @@
             android:fontFamily="cursive"
             android:text="Signin"
             android:textColor="@android:color/black"
-            android:textFontWeight="40sp"
+
             android:textStyle="bold"
-            tools:textSize="40" />
+             />
 
 
             <EditText
