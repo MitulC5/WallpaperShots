@@ -68,7 +68,7 @@ public  class ImageModelRecyclerAdapter extends RecyclerView.Adapter<ImageModelR
         final ImageModel currentimage = imageModelList.get(position);
         Log.d("Firestore1",currentimage.getImage_url());
         Log.d("Firestore1",currentimage.getUser_id());
-        holder.imageTitle.setText(currentimage.getUser_id());
+        holder.imageTitle.setText(currentimage.getImage_title());
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

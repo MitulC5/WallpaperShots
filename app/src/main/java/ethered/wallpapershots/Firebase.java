@@ -136,9 +136,11 @@ public class Firebase extends AppCompatActivity implements View.OnClickListener 
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    final ProgressDialog progressDialog = new ProgressDialog(getApplicationContext());
-                    progressDialog.setTitle("Uploading");
-                    progressDialog.show();
+//                    final ProgressDialog progressDialog = new ProgressDialog(getApplicationContext());
+//                    progressDialog.setMax(100);
+//                    progressDialog.setTitle("Uploading");
+//                    progressDialog.show();
+//                    progressDialog.incrementProgressBy(2);
                     EditText e = (EditText)findViewById(R.id.imgname);
                     StorageReference ref=mStorageRef.child("images/"+ e.getText().toString());
                     ref.getDownloadUrl()
@@ -167,7 +169,7 @@ public class Firebase extends AppCompatActivity implements View.OnClickListener 
                                             Log.d("Error","Document failed to upload");
                                         }
                                     });
-                                    progressDialog.dismiss();
+                                 //   progressDialog.dismiss();
                                     Log.d(TAG,"Got the url and it is " +uri.toString());
                                     Toast.makeText(Firebase.this, uri.toString(), Toast.LENGTH_SHORT).show();
 
