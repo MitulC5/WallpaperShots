@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -35,12 +36,10 @@ public class Fullimage2 extends AppCompatActivity {
 
     private Button button;
     private PhotoView photoView;
-    String Url;
-    Bitmap bmap;
-    String Url1,Url2,Url3;
-    Context context;
-    String getUrl;
+    private TextView imgt,imgd;
+    String Url,title,desc;
 
+    Context context;
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
@@ -48,11 +47,17 @@ public class Fullimage2 extends AppCompatActivity {
 
         context = getApplicationContext();
         button = (Button)findViewById(R.id.button);
-        PhotoView photoView = (PhotoView) findViewById(R.id.fullimg);
-
+         photoView = (PhotoView) findViewById(R.id.fullimg);
+        imgt = (TextView)findViewById(R.id.imgt);
+        imgd = (TextView)findViewById(R.id.imgd);
         RequestOptions options = new RequestOptions();
         Bundle extras = getIntent().getExtras();
         Url = extras.getString("url");
+        title = extras.getString("title");
+        desc = extras.getString("desc");
+        imgt.setText(title);
+        imgd.setText(desc);
+
         Log.d("Fullimage",Url);
         RequestOptions requestOptions  = new RequestOptions();
         GlideApp

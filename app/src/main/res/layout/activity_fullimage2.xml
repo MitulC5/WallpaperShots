@@ -17,14 +17,14 @@
 
             <TextView
 
-                android:id="@+id/textView"
+                android:id="@+id/imgt"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="center"
                 android:layout_weight="0.03"
                 android:text="TextView" />
             <TextView
-                android:id="@+id/nameofphotographer"
+                android:id="@+id/imgd"
                 android:layout_weight="0.03"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />

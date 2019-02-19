@@ -36,6 +36,8 @@ public class Firebase extends AppCompatActivity implements View.OnClickListener 
     private static final int PICK_IMAGE_REQUEST = 234;
     private static final String ImageURL = "image_url";
     private static final String UserID = "user_id";
+    private static final String ImageTITLE = "image_title";
+    private static final String ImageDESC = "image_desc";
     FirebaseFirestore db;
 
     //Buttons
@@ -51,7 +53,7 @@ public class Firebase extends AppCompatActivity implements View.OnClickListener 
 
     //a Uri object to store file path
     private Uri filePath;
-    private String userid;
+    private String userid,imagedesc,imagetitle;
     String url;
 
     @Override
@@ -134,19 +136,28 @@ public class Firebase extends AppCompatActivity implements View.OnClickListener 
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    final ProgressDialog progressDialog = new ProgressDialog(getApplicationContext());
-                    progressDialog.setTitle("Uploading");
-                    progressDialog.show();
+//                    final ProgressDialog progressDialog = new ProgressDialog(getApplicationContext());
+//                    progressDialog.setMax(100);
+//                    progressDialog.setTitle("Uploading");
+//                    progressDialog.show();
+//                    progressDialog.incrementProgressBy(2);
                     EditText e = (EditText)findViewById(R.id.imgname);
                     StorageReference ref=mStorageRef.child("images/"+ e.getText().toString());
                     ref.getDownloadUrl()
                             .addOnSuccessListener(new OnSuccessListener<Uri>() {
                                 @Override
                                 public void onSuccess(Uri uri) {
+                                    EditText imgtitle = (EditText)findViewById(R.id.imgtitle);
+                                    EditText imgdesc = (EditText)findViewById(R.id.imgdesc);
+                                    imagetitle = imgtitle.getText().toString();
+                                    imagedesc = imgdesc.getText().toString();
                                     userid = user.getUid();
                                     Map<String,Object> datatosave = new HashMap<String, Object>();
                                     datatosave.put(ImageURL,uri.toString());
                                     datatosave.put(UserID,userid);
+                                    datatosave.put(ImageTITLE,imagetitle);
+                                    datatosave.put(ImageDESC,imagedesc);
+
                                     db.collection("imagedata").add(datatosave).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                         @Override
                                         public void onSuccess(DocumentReference documentReference) {
@@ -158,7 +169,7 @@ public class Firebase extends AppCompatActivity implements View.OnClickListener 
                                             Log.d("Error","Document failed to upload");
                                         }
                                     });
-                                    progressDialog.dismiss();
+                                 //   progressDialog.dismiss();
                                     Log.d(TAG,"Got the url and it is " +uri.toString());
                                     Toast.makeText(Firebase.this, uri.toString(), Toast.LENGTH_SHORT).show();
 
