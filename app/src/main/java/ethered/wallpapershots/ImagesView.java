@@ -60,7 +60,7 @@ public class ImagesView extends AppCompatActivity {
         ImageModelList = new ArrayList<>();
         swipeRefreshLayout = (SwipeRefreshLayout)findViewById(R.id.swipeRefreshLayout);
 
-        Log.d(TAG,"Errorhdiahiawhawhkacwjwaijacwoi;awjocwb!");
+        Log.d(TAG,"Error!");
         imageModelRecyclerViewAdapter = new ImageModelRecyclerAdapter(ImagesView.this,ImageModelList);
         imageModelRecyclerViewAdapter1 = new ImageModelRecyclerAdapter(getApplicationContext(),ImageModelList);
         rv.setAdapter(imageModelRecyclerViewAdapter);
@@ -93,7 +93,7 @@ public class ImagesView extends AppCompatActivity {
 
                     }rv.setAdapter(imageModelRecyclerViewAdapter);
 
-                    Log.d(TAG,"urls from the SwipeRefresh" +ImageModelList.get(1).getimage_url().toString());
+                    Log.d(TAG,"urls from the SwipeRefresh" +ImageModelList.get(1).getImage_url().toString());
 
                     onitemsloadcomplete();
                     swipeRefreshLayout.setRefreshing(false);
@@ -105,7 +105,7 @@ public class ImagesView extends AppCompatActivity {
 
             void onitemsloadcomplete(){
 
-                Log.d(TAG,"Errorhdiahiawhawhkacwjwaijacwoi;awjocwb4!");
+                Log.d(TAG,"Error during item upload!");
 // kya kiya
 
                 swipeRefreshLayout.setEnabled(false);
@@ -128,7 +128,7 @@ public class ImagesView extends AppCompatActivity {
 
                 }rv.setAdapter(imageModelRecyclerViewAdapter);
 
-                Log.d(TAG,ImageModelList.get(1).getimage_url().toString());
+                Log.d(TAG,ImageModelList.get(1).getImage_url().toString());
 
                 //might crash if no data
             }
