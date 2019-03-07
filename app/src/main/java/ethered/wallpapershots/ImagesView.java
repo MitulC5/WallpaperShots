@@ -29,7 +29,9 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 import javax.annotation.Nullable;
 
@@ -53,7 +55,7 @@ public class ImagesView extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                 | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
 
-                );
+        );
         setContentView(R.layout.activity_images_view);
         rv =(RecyclerView)findViewById(R.id.rv);
         mFireStore = FirebaseFirestore.getInstance();
@@ -69,7 +71,7 @@ public class ImagesView extends AppCompatActivity {
         StaggeredGridLayoutManager mLayoutManager  = new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
         rv.setLayoutManager(mGrid);
 
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+        /*swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 //swipeto refresh not working
@@ -77,25 +79,25 @@ public class ImagesView extends AppCompatActivity {
                 mFireStore.collection("imagedata").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
 
 
-                @Override
-                public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                    Log.d(TAG,"Error");
+                    @Override
+                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                        Log.d(TAG,"Error");
 
-                    for(QueryDocumentSnapshot documentSnapshot :queryDocumentSnapshots) {
-                        String URLs = (String) documentSnapshot.get("image_url");
-                        Log.d(TAG, "URLs of the Image :" + URLs);
-                        ImageModel imageModel = documentSnapshot.toObject(ImageModel.class);
-                        ImageModelList.add(imageModel);
+                        for(QueryDocumentSnapshot documentSnapshot :queryDocumentSnapshots) {
+                            String URLs = (String) documentSnapshot.get("image_url");
+                            Log.d(TAG, "URLs of the Image :" + URLs);
+                            ImageModel imageModel = documentSnapshot.toObject(ImageModel.class);
+                            ImageModelList.add(imageModel);
 
-                    }rv.setAdapter(imageModelRecyclerViewAdapter);
+                        }rv.setAdapter(imageModelRecyclerViewAdapter);
 
-                    Log.d(TAG,"urls from the SwipeRefresh" +ImageModelList.get(1).getImage_url().toString());
+                        Log.d(TAG,"urls from the SwipeRefresh" +ImageModelList.get(1).getImage_url().toString());
 
-                    onitemsloadcomplete();
-                    swipeRefreshLayout.setRefreshing(false);
+                        onitemsloadcomplete();
+                        swipeRefreshLayout.setRefreshing(false);
 
-                }
-            });
+                    }
+                });
 
             }
 
@@ -107,7 +109,15 @@ public class ImagesView extends AppCompatActivity {
                 swipeRefreshLayout.setEnabled(false);
             }
         });
-
+*/
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                // cancel the Visual indication of a refresh
+                swipeRefreshLayout.setRefreshing(false);
+                shuffleItems();
+            }
+        });
 
         mFireStore.collection("imagedata").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
 
@@ -130,7 +140,17 @@ public class ImagesView extends AppCompatActivity {
             }
         });
 
-        }
-
+    }
+    public void shuffleItems() {
+        // shuffle the ArrayList's items and set the adapter
+        Collections.shuffle(ImageModelList, new Random(System.currentTimeMillis()));
+       // Collections.shuffle(personImages, new Random(System.currentTimeMillis()));
+        // call the constructor of CustomAdapter to send the reference and data to Adapter
+        //CustomAdapter customAdapter = new CustomAdapter(MainActivity.this, personNames, personImages);
+        //recyclerView.setAdapter(customAdapter); // set the Adapter to RecyclerView
+        imageModelRecyclerViewAdapter = new ImageModelRecyclerAdapter(ImagesView.this,ImageModelList);
+        imageModelRecyclerViewAdapter1 = new ImageModelRecyclerAdapter(getApplicationContext(),ImageModelList);
+        rv.setAdapter(imageModelRecyclerViewAdapter);
     }
 
+}
