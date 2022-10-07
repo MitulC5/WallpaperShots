@@ -1,12 +1,12 @@
+
+  <h3 align="center">
+
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
-
-<br />
-
+</h3>
   <h3 align="center">WallpaperShots</h3>
 
   <p align="center">
@@ -47,13 +47,11 @@ This section should list any major frameworks that you built your project using.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/MitulC5/WallpaperShots
 [contributors-url]: https://github.com/MitulC5/WallpaperShots/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/MitulC5/WallpaperShots
 [forks-url]: https://github.com/MitulC5/WallpaperShots/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/MitulC5/WallpaperShots
 [stars-url]: https://github.com/MitulC5/WallpaperShots/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-shield]:https://img.shields.io/github/issues/MitulC5/WallpaperShots
 [issues-url]: https://github.com/MitulC5/WallpaperShots/issues
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/mitulc
